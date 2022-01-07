@@ -1,7 +1,28 @@
 let PlanComponent = {
-    template: '#plans-template',
+    template: '#plan-template',
     props: {
-        title: String,
+        title: {
+            type: String
+        },
+        selectedPlan: {
+            type: String
+        }
+    },
+    data() {
+        return {
+            // selected: false
+        }
+    },
+    computed: {
+        isSelected() {
+            return this.title === this.selectedPlan
+        }
+    },
+    methods: {
+        select() {
+            this.$emit('select', [this.title, "hey compa!"])
+            // this.selected = !this.selected
+        }
     }
 }
 
@@ -12,7 +33,13 @@ let PlaPickerComponent = {
     },
     data () {
         return {
-            plans: ["Bloodborne No Hit", "Dark Souls No Hit", "Dark Souls II No Hit", "Dark Souls III No Hit"]
+            plans: ["Bloodborne No Hit", "Dark Souls No Hit", "Dark Souls II No Hit", "Dark Souls III No Hit"],
+            selectedPlan: null
+        }
+    },
+    methods: {
+        selectPlan(plan) {
+            this.selectedPlan = plan
         }
     }
 }
