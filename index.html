@@ -12,12 +12,15 @@
         <center>
             <h1>My Plans</h1>
             <h3>Here's a simple list of plans in Vue.js</h3>
-            <div class="plans mt-4">
-                <plan v-for="plan in plans" :title="plan"></plan>
-            </div>
+            <plan-picker></plan-picker>
         </center>
     </div>
 
+    <script type="text/x-template" id="plan-picker-template">
+        <div class="plans mt-4">
+            <plan v-for="plan in plans" :title="plan"></plan>
+        </div>
+    </script>
     <script type="text/x-template" id="plans-template">
         <div class="plan">
             <div class="card m-4" style="width: 18rem;">
