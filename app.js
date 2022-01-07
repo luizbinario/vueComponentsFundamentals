@@ -1,4 +1,4 @@
-let PlanComponent = {
+let PlanPickerItemComponent = {
     template: '#plan-template',
     props: {
         title: {
@@ -20,16 +20,16 @@ let PlanComponent = {
     },
     methods: {
         select() {
-            this.$emit('select', [this.title, "hey compa!"])
+            this.$emit('select', this.title)
             // this.selected = !this.selected
         }
     }
 }
 
-let PlaPickerComponent = {
+let PlanPickerComponent = {
     template: '#plan-picker-template',
     components: {
-        'plan': PlanComponent
+        'plan-item': PlanPickerItemComponent
     },
     data () {
         return {
@@ -47,6 +47,6 @@ let PlaPickerComponent = {
 new Vue({
     el: '#app',
     components: {
-        'plan-picker': PlaPickerComponent
+        'plan-picker': PlanPickerComponent
     }
 })
