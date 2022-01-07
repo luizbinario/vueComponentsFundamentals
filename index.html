@@ -16,6 +16,12 @@
         <click-counter></click-counter>
     </div>
     
+    <script type="text/x-template" id="click-counter-template">
+        <div>
+            <b>The count is:</b>
+            <button @click='count++'>{{count}}</button>
+        </div>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="app.js"></script>
 </body>
