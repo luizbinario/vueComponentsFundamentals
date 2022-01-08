@@ -18,10 +18,10 @@
 
     <script type="text/x-template" id="plan-picker-template">
         <div class="plans mt-4">
-            <plan-picker-item v-for="plan in plans" :title="plan" @select="selectPlan" :selected-plan="selectedPlan"></plan-item>
+            <plan-picker-item v-for="plan in plans" :title="plan" @select="selectPlan" :selected-plan="selectedPlan"></plan-picker-item>
         </div>
     </script>
-    <script type="text/x-template" id="plan-template">
+    <script type="text/x-template" id="plan-picker-item-template">
         <div class="plan" @click="select">
             <div class="card m-4" style="width: 18rem;" :class="{'text-white bg-dark': isSelected}">
                 <div class="card-body">
