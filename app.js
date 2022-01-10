@@ -29,7 +29,7 @@ let PlanPickerItemComponent = {
 let PlanPickerComponent = {
     template: '#plan-picker-template',
     components: {
-        'plan-item': PlanPickerItemComponent
+        'plan-picker-item': PlanPickerItemComponent
     },
     data () {
         return {
