@@ -1,19 +1,22 @@
-Vue.component('github-user-card', {
-    template: '#github-user-card-template',
+Vue.component('notification-message', {
+    template: '#notification-message-template',
     props: {
-        username: {
-            type: String,
-            required: true
+        type: {
+            type: String
+        },
+        header: {
+            type: String
         }
     },
     data() {
         return {
-            user: null
+            hide: false
         }
     },
-    created() {
-        axios.get('https://api.github.com/users/' + this.username)
-        .then(response => this.user = response.data)
+    methods: {
+        hideMessage() {
+            this.hide = true
+        }
     }
 })
 
